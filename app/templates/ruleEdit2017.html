@@ -1,0 +1,30 @@
+{% extends "ruleEditBase.html" %}
+
+{% block RuleParams %}
+    <div class="form-group">
+        <label class="col-sm-1">延迟时长(s):</label>
+        <input  id="slider_2" class="auto_slide" type="text" data-slider-min="1" data-slider-max="60" data-slider-step="1" data-slider-value="3" />
+        <span id="brightness_current_slider_val_label">{{ form.HS_RuleDelay(size=1,readonly=True, class='gray RuleEdit') }}</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-1">预置方案:</label>
+        {{ form.Rule_Plan(style='width:300px;height:100px',class='RuleEdit') }}
+    </div>
+    <div class="form-group">
+        <label class="col-sm-1">报警等级设置:</label>
+        {{ form.Rule_RuleLevel(style='display: none' ,id='level') }}
+        <button id="btn_1" name="Rule_RuleLevel" type="button" class="btn btn-primary RuleEdit" value="1">重大事件</button>
+        <button id="btn_3" name="Rule_RuleLevel" style="float: left" type="button" class="btn btn-primary RuleEdit" value="3">一般管理事件</button>
+        <button id="btn_2" name="Rule_RuleLevel" style="float: left" type="button" class="btn btn-primary RuleEdit" value="2">疑似事件</button>
+    </div>
+    <div class="form-group">
+        <button id="sumbit" style="margin-left: 20px"  class="btn btn-primary">提交</button>
+        <a style="margin-left: 300px"  href="{{ url_for('rule') }}" class="btn btn-primary">返回</a>
+    </div>
+
+{% endblock %}
+
+{% block ruleScript %}
+    <script src="{{ url_for('static',filename='scripts/ruleEdit2017.js') }}"></script>
+{% endblock %}

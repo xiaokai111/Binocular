@@ -1,0 +1,107 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>智能哨兵(嵌入式)</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}"/>
+</head>
+<body>
+
+<form action="/login" method="post" name="index">
+
+<div id="base" class="">
+        {{form.hidden_tag()}}
+      <!-- Unnamed (矩形) -->
+      <div id="u0" class="ax_default box_3">
+        <div id="u0_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (文本框) -->
+      <div id="u2" class="ax_default text_field">
+          {{form.username(size=20)}}
+
+      </div>
+
+      <!-- Unnamed (文本框) -->
+      <div id="u3" class="ax_default text_field">
+          {{form.password(size=20)}}
+          <!-- <input id="password" type="password" value=""/> -->
+      </div>
+
+    <!-- Unnamed (矩形) -->
+      <div id="u4" class="ax_default primary_button">
+
+      <input class="u4_div" name="" type="submit" value="登录"  />
+
+        <!-- Unnamed () <div id="" class=""></div> -->
+        <div id="u5" class="text" style="visibility: visible;">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u6" class="ax_default _一级标题">
+        <div id="u6_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u7" class="text" style="visibility: visible;">
+          <p><span>智能双目火苗侦测摄像机</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u8" class="ax_default label">
+        <div id="u8_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u9" class="text" style="visibility: visible;">
+          <p><span>账号：</span></p><p><span>密码：</span></p>
+        </div>
+      </div>
+
+     <!-- Unnamed (矩形) -->
+      <div id="u15" class="ax_default label">
+        <div id="u15_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u16" class="text" style="visibility: visible;">
+          <p>{% for error in form.errors.username %}
+            <span style="color: red;">[{{error}}]</span>
+          {% endfor %}
+        {% if userNameErrorMessage %}
+        <span style="color: red;">[{{userNameErrorMessage}}]</span>
+        {% endif %}<br></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u17" class="ax_default label">
+        <div id="u17_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u18" class="text" style="visibility: visible;">
+          <p>{% for error in form.errors.password %}
+            <span style="color: red;">[{{error}}]</span>
+          {% endfor %}
+          {% if passwordErrorMessage %}
+            <span style="color: red;">[{{passwordErrorMessage}}]</span>
+          {% endif %}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="u56" class="">
+
+  <div class="footer">
+    <div style="text-align:center;">
+        <p><a style="color:Black;">系统版本&nbsp;&nbsp;1.0</a></p>
+    </div>
+  </div>
+
+</div>
+
+
+</form>
+</body>
+</html>

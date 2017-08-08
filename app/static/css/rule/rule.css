@@ -1,0 +1,124 @@
+.rule_restricted_width {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mgr_snapshot_pane,
+#rules_pane {
+	overflow:hidden;
+	position:relative;
+	text-align: left;
+}
+
+#mgr_snapshot_pane {
+	display: inline-block;
+	text-align: center;
+	float: left;
+	min-width: 352px;
+}
+
+#rules_pane {
+    padding-left: 10px;
+    padding-bottom: 2px;
+}
+
+#mgr_snapshot_pane #snapshot_frame {
+    background-color: #F5F5F5;
+   	margin-bottom: 5px;
+}
+
+#mgr_snapshot_pane #snapshot_loading_message {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#mgr_snapshot_pane img.snapshot {
+	border: 1px solid black;
+    min-width: 352px;
+}
+
+#mgr_snapshot_pane #snapshot_markup {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#rule_management_pane #snapshot_warning {
+    float: left;
+}
+
+#snapshot_caption_pane {
+	text-align: center;
+}
+
+#rule_management_pane #playpause_btn {
+/**
+ * TODO: Change this around for the out of view condition.
+ */
+	margin-top: -5px;
+}
+
+
+#rule_btn_pane {
+    position: relative;
+	padding-bottom: 0.75em;
+    overflow: visible;
+}
+
+#refresh_pane {
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+#refresh_pane #refresh_now_link {
+    margin-left: 1em;
+    margin-right: 0.25em;
+}
+
+table#rule_list {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;
+    table-layout: fixed;
+}
+
+#rw_dummy {
+    visibility: collapse;
+}
+
+table#rule_list td {
+	padding: 2px 4px;
+	vertical-align: top;
+}
+    
+col#is_active_col   { width: 25px }
+
+col#rule_info_col   { width: auto }
+
+col#action_col      { width: 48px }
+
+.rule_info {
+    overflow: hidden;
+}
+
+.btn_delete {
+	float: right;
+}
+
+input[disabled].btn_copy {
+    cursor: default;
+}
+
+.placeholder_border {
+    border-top: 1px solid gray;
+}
+
+.placeholder_border > table {
+    border-style: none;
+}

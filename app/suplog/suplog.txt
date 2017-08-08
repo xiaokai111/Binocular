@@ -1,0 +1,16 @@
+supervisor: couldn't exec /home/rabbit/Documents/srv/BinocularCamera/app/run.py: ENOENT
+supervisor: child process was not spawned
+supervisor: couldn't exec /home/rabbit/Documents/srv/BinocularCamera/app/run.py: ENOENT
+supervisor: child process was not spawned
+supervisor: couldn't exec /home/rabbit/Documents/srv/BinocularCamera/app/run.py: ENOENT
+supervisor: child process was not spawned
+supervisor: couldn't exec /home/rabbit/Documents/srv/BinocularCamera/app/run.py: ENOENT
+supervisor: child process was not spawned
+8
+8
+8
+8
+8
+8
+8
+8

@@ -1,0 +1,193 @@
+
+#edit_snapshot_pane {
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+#snapshot_options_pane {
+    height: 1.5em;
+}
+
+#snapshot_options {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 1em;
+}
+
+#snapshot_caption {
+    display: none;
+    height: 1.5em;
+    font-weight: bold;
+}
+
+#edit_snapshot_pane #snapshot_frame {
+    position: relative;
+    background-color: white;
+    border: solid 1px black;
+    margin-top: 0.25em;
+    width: 352px;
+    height: 288px;
+}
+
+#edit_snapshot_pane #snapshot_loading_message {
+    position: absolute;
+    z-index: 5;
+    top: 20%;
+    width: inherit;
+    text-align: center;
+    font-weight: bold;
+}
+
+#edit_snapshot_pane img.snapshot {
+    min-width: 352px;
+}
+
+#edit_snapshot_pane .showhide_container {
+    position: relative;
+    top: 5px;
+}
+
+#rule_edit_pane #tool_palette {
+    float: left;
+    height: 100%;
+    padding: .3em 8px 8px 8px;
+}
+
+#rule_edit_pane #tool_palette.reduced_padding {
+    padding-top: 4px;
+}
+
+#rule_edit_pane #tool_palette div#action_buttons {
+    border-top: solid 1px gray;
+    margin-top: 1px;
+    padding-top: 3px;
+    width: auto;
+    height: auto;
+	cursor: default;
+}
+
+#rule_edit_pane #tool_palette div#options_buttons {
+    border-top: solid 1px gray;
+    margin-top: 1px;
+    padding-top: 5px;
+    width: auto;
+    height: auto;
+	cursor: default;
+}
+
+
+#rule_edit_pane #tool_palette *.toolbtn {
+    background-image: url("/static/images/rule/palette.png");
+	cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border: solid 1px transparent;
+    margin-bottom: 4px;
+}
+
+#rule_edit_pane #tool_palette *.toolbtn.disabled {
+	cursor: default;
+}
+
+#rule_edit_pane #tool_palette *.toolbtn.selected {
+    border-color: black;
+    background-color: #bac2ff;
+}
+
+#rule_edit_pane #tool_palette.tripwire *.aoi_only  {
+    display: none;
+}
+
+#rule_edit_pane #tool_palette.aoi *.tripwire_only,
+#rule_edit_pane #tool_palette.fullframe *.tripwire_only,
+#rule_edit_pane #tool_palette.tamper *.tripwire_only  {
+    display: none;
+}
+
+#rule_edit_pane #tool_palette #action_buttons div + div {
+    margin-top: 8px;
+}
+
+#rule_edit_pane #tool_select           { background-position: 0 0 }
+#rule_edit_pane #tool_select.disabled  { background-position: 0 -100% }
+
+#tool_line                 { background-position: -100% 0 }
+#tool_line.disabled        { background-position: -100% -100% }
+
+#action_full_view          { background-position: -200% 0 }
+#action_full_view.active   { background-position: -200% -100% }
+#action_full_view.disabled   { background-position: -800% 0 }
+#action_full_view.active.disabled   { background-position: -800% -100% }
+
+/*#tool_polygon              { background-position: -300% 0 }*/
+/*#tool_polygon.disabled     { background-position: -300% -100% }*/
+
+#tool_polygon              { background-position: -298% 0 }
+#tool_polygon.disabled     { background-position: -298% -100% }
+
+#action_delete             { background-position: -398% 0 }
+#action_delete.disabled    { background-position: -398% -100% }
+
+#action_direction          { background-position: -500% 0 }
+#action_direction.disabled { background-position: -500% -100% }
+
+#action_direction.left_to_right          { background-position: -600% 0 }
+#action_direction.left_to_right.disabled { background-position: -600% -100% }
+
+#action_direction.right_to_left          { background-position: -700% 0 }
+#action_direction.right_to_left.disabled { background-position: -700% -100% }
+
+/*#config_options             { background-position: -900% 0 }*/
+/*#config_options.disabled    { background-position: -900% -100% }*/
+#config_options             { background-position: -895% 0 }
+#config_options.disabled    { background-position: -895% -100% }
+
+
+#help_options               { background-position: -1000% 0 }
+#help_options.disabled      { background-position: -1000% -100% }
+
+#edit_snapshot_pane #snapshot_markup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+#snapshot_interactive_drawing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+}
+
+#snapshot_actions_pane {
+    position: relative;
+    text-align: center;
+}
+
+#rule_edit_pane #snapshot_warning {
+    float: left;
+    width: 30px;
+}
+
+#markup_error_message {
+    display: none;
+    clear: both;
+    text-align: center;
+}
+
+#filter_markup_buttons_pane {
+    position: relative;
+    clear: both;
+}
+
+#filter_markup_buttons_pane > div {
+    float: right;
+}
+
+#filter_markup_buttons_pane .btn {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}

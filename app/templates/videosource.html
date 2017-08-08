@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% block style %}
+    <link href="{{ url_for('static', filename='css/plugins/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/plugins/bootstrap-switch.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/jquery.qtip.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/notification.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="col-xs-12">
+        <div id="video_source_setting_list" class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption"><i class="icon-globe"></i>视频源设置</div>
+            </div>
+            <div class="portlet-body">
+                <table id="video_source_setting_table"
+                       class="table table-striped table-bordered table-hover table-full-width ">
+                    <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            厂商
+                        </th>
+                        <th>
+                            IP
+                        </th>
+                        <th>
+                            端口
+                        </th>
+                        <th>
+                            名称
+                        </th>
+                        <th>
+                            通道号
+                        </th>
+                        <th>
+                            码流类型
+                        </th>
+                        <th>
+                            是否启用
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+                <input type="button" id="add" class='btn btn-success' value="新增" onclick='Add()'/>
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-body form">
+        <div id="video_source_setting_dialog" class="modal" data-backdrop="static" tabindex="-1"
+             data-focus-on="input:first">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dissmiss="modal">&times;</button>
+                        <h4 id="video_source_setting_title"></h4>
+                    </div>
+                    <form id="video_source_setting_form" action="/Rule/EditVideoSourceSetting" method="post"
+                          class="form-horizontal form_validation_ttip">
+                        <div class="modal-body overflow-visible">
+                            <input id="video_source_setting_id" name="VideoSourceSettingId" type="hidden"/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="name">名称<code>*</code></label>
+                                        <div>
+                                            <input type="text" id="name" name="Name" class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="device_vendor">厂商<code>*</code></label>
+                                        <div>
+                                            <select name="DeviceVendor" id="device_vendor" class="col-sm-3">
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="ip">IP<code>*</code></label>
+                                        <div>
+                                            <input type="text" id="ip" name="IP" class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="port">端口<code>*</code></label>
+                                        <div>
+                                            <input type="text" id="port" name="Port" class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="user">用户名<code>*</code></label>
+                                        <div>
+                                            <input type="text" id="user" name="User" class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="password">密码<code>*</code></label>
+                                        <div>
+                                            <input type="password" id="password" name="Password"
+                                                   class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="device_id">设备ID<code>*</code></label>
+                                        <div>
+                                            <input type="text" id="device_id" name="DeviceId"
+                                                   class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="channel">通道号<code>*</code></label>
+                                        <div>
+                                            <select name="Channel" id="Channel" class="col-sm-3">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="stream_type">码流类型<code>*</code></label>
+                                        <div>
+                                            <select name="StreamType" id="stream_type" class="col-sm-3">
+                                                <option>主码流</option>
+                                                <option>子码流</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="streamsSvr_ip">流媒体服务器IP</label>
+                                        <div>
+                                            <input type="text" id="streamsSvr_ip" name="StreamSvrIP"
+                                                   class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3" for="streamSvr_port">流媒体服务器端口</label>
+                                        <div>
+                                            <input type="text" id="streamSvr_port" name="StreamSvrPort"
+                                                   class="input-large col-sm-6"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3">是否启用 <code>*</code></label>
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="checkbox" id="enable" name="Enable" class="bs-switch"
+                                                       data-on-text=是 data-off-text=否 data-size="small"
+                                                       checked="checked"/>
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="notificationsbox">
+                            <h4 style="margin-top: -20px;">
+                                <label>预览</label>
+                            </h4>
+                            <img style="margin: 10px;" id="previewImg" src=""/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="preview" class="btn btn-primary" style="float:left;">预览</button>
+                            <button type="button" id="cancel" data-dismiss="modal" class="btn">取消</button>
+                            <button type="submit" id="submit" class="btn btn-danger">提交</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-switch.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.qtip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/table.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/commonvalidator.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/videosource.js') }}"></script>
+{% endblock %}

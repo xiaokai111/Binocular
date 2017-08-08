@@ -1,0 +1,607 @@
+body {
+
+  background-color:rgba(246, 246, 246, 1);
+  background-image:none;
+  position:static;
+
+  width:1217px;
+  /*margin-left:0;left:auto;
+  margin-right:0;
+  text-align:left;  margin:0px;*/
+
+  margin: 0 auto;
+}
+#base {
+  position:absolute;
+  z-index:0;
+
+}
+#u0_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:429px;
+  height:306px;
+  background:-webkit-linear-gradient(270deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 2%, rgba(204, 204, 204, 1) 100%, rgba(204, 204, 204, 1) 100%);
+  background:-moz-linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 2%, rgba(204, 204, 204, 1) 100%, rgba(204, 204, 204, 1) 100%);
+  background:linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 2%, rgba(204, 204, 204, 1) 100%, rgba(204, 204, 204, 1) 100%);
+  box-sizing:border-box;
+  border-width:2px;
+  border-style:solid;
+  border-color:rgba(228, 228, 228, 1);
+  border-radius:20px;
+  -moz-box-shadow:3px 3px 15px rgba(51, 51, 51, 0.666666666666667);
+  -webkit-box-shadow:3px 3px 15px rgba(51, 51, 51, 0.666666666666667);
+  box-shadow:3px 3px 15px rgba(51, 51, 51, 0.666666666666667);
+}
+#u0 {
+  position:absolute;
+  left:428px;
+  top:240px;
+  width:429px;
+  height:306px;
+}
+#u1 {
+  position:absolute;
+  left:2px;
+  top:145px;
+  width:425px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u2 {
+  position:absolute;
+  left:551px;
+  top:366px;
+  width:183px;
+  height:33px;
+}
+#username {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:183px;
+  height:33px;
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+#u3 {
+  position:absolute;
+  left:551px;
+  top:408px;
+  width:183px;
+  height:33px;
+}
+#password {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:183px;
+  height:33px;
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+.u4_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(22, 155, 213, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+    color: white;
+}
+#u4 {
+  position:absolute;
+  left:573px;
+  top:470px;
+  width:140px;
+  height:40px;
+}  /*:hover */
+.u4_div:hover {
+
+	background-color:rgba(0, 204, 255, 1);
+
+	}
+.u4_div:active {
+
+	 background-color:rgba(0, 153, 255, 1)
+
+	}
+/*
+#u4_div.mouseOver {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(0, 204, 255, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#u4.mouseOver {
+}  :active
+#u4_div.mouseDown {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:140px;
+  height:40px;
+  background:inherit;
+  background-color:rgba(0, 153, 255, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#u4.mouseDown {
+}*/
+#u5 {
+	position: absolute;
+	left: 48px;
+	top: 12px;
+	width: 38px;
+	word-wrap: break-word;
+}
+
+
+#u6_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:353px;
+  height:37px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  color:#999999;
+}
+#u6 {
+  position:absolute;
+  left:468px;
+  top:284px;
+  width:353px;
+  height:37px;
+  font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  color:#999999;
+}
+#u7 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:353px;
+  white-space:nowrap;
+}
+#u8_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:43px;
+  height:90px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  line-height:45px;
+}
+#u8 {
+  position:absolute;
+  left:508px;
+  top:358px;
+  width:43px;
+  height:90px;
+  line-height:45px;
+}
+#u9 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:43px;
+  white-space:nowrap;
+}
+#u10_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:175px;
+  height:15px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:12px;
+}
+#u10 {
+  position:absolute;
+  left:510px;
+  top:721px;
+  width:175px;
+  height:15px;
+  font-size:12px;
+}
+#u11 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:175px;
+  white-space:nowrap;
+}
+#u12_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:73px;
+  height:15px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:12px;
+  color:#0000FF;
+}
+#u12 {
+  position:absolute;
+  left:702px;
+  top:721px;
+  width:73px;
+  height:15px;
+  font-size:12px;
+  color:#0000FF;
+}
+#u13 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:73px;
+  white-space:nowrap;
+}
+
+#u15 {
+  position:absolute;
+  left:744px;
+  top:375px;
+  width:84px;
+  height:16px;
+  font-size:13px;
+}
+#u16 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:84px;
+  white-space:nowrap;
+}
+#u17_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:84px;
+  height:16px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:13px;
+}
+#u17 {
+  position:absolute;
+  left:744px;
+  top:417px;
+  width:84px;
+  height:16px;
+  font-size:13px;
+}
+#u18 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:84px;
+  white-space:nowrap;
+}
+
+#u56 {
+	margin:0 auto;
+    bottom:0px;
+  width:99px;
+  height:306px;
+}
+
+.footer {
+	 position:absolute;
+  z-index:0;
+
+  bottom:0px;
+  width:175px;
+  height:15px;
+  font-size:12px;
+	}
+
+/*------------------------------------*/
+
+
+
+.ax_default {
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  color:#333333;
+  text-align:center;
+  line-height:normal;
+}
+.box_3 {
+}
+.primary_button {
+  color:#FFFFFF;
+}
+
+
+.label {
+  font-size:14px;
+  text-align:left;
+}
+
+
+
+/*------------------------------------*/
+
+/* so the window resize fires within a frame in IE7 */
+html, body {
+    height: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+p {
+    margin: 0px;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    font-kerning: normal;
+}
+
+iframe {
+    background: #FFFFFF;
+}
+
+/* to match IE with C, FF */
+input {
+    padding: 1px 0px 1px 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+textarea {
+    margin: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+div.intcases {
+    font-family: arial;
+    font-size: 12px;
+    text-align:left;
+    border:1px solid #AAA;
+    background:#FFF none repeat scroll 0% 0%;
+    z-index:9999;
+    visibility:hidden;
+    position:absolute;
+    padding: 0px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+div.intcaselink {
+    cursor: pointer;
+    padding: 3px 8px 3px 8px;
+    margin: 5px;
+    background:#EEE none repeat scroll 0% 0%;
+    border:1px solid #AAA;
+    border-radius: 3px;
+}
+
+div.refpageimage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 0px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url(images/newwindow.gif);
+    background-repeat: no-repeat;
+}
+
+div.annnoteimage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 0px;
+    /*width: 16px;
+    height: 12px;*/
+    cursor: help;
+    /*background-image: url(images/note.gif);*/
+    /*background-repeat: no-repeat;*/
+    width: 13px;
+    height: 12px;
+    padding-top: 1px;
+    text-align: center;
+    background-color: #138CDD;
+    -moz-box-shadow: 1px 1px 3px #aaa;
+    -webkit-box-shadow: 1px 1px 3px #aaa;
+    box-shadow: 1px 1px 3px #aaa;
+}
+
+div.annnoteline {
+    display: inline-block;
+    width: 9px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    margin-top: 1px;
+}
+
+div.annnotelabel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-family: Helvetica,Arial;
+    font-size: 10px;
+    /*border: 1px solid rgb(166,221,242);*/
+    cursor: help;
+    /*background:rgb(0,157,217) none repeat scroll 0% 0%;*/
+    padding: 1px 3px 1px 3px;
+    white-space: nowrap;
+    color: white;
+
+    background-color: #138CDD;
+    -moz-box-shadow: 1px 1px 3px #aaa;
+    -webkit-box-shadow: 1px 1px 3px #aaa;
+    box-shadow: 1px 1px 3px #aaa;
+}
+
+.annotation {
+    font-size: 12px;
+    padding-left: 2px;
+    margin-bottom: 5px;
+}
+
+.annotationName {
+    /*font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    white-space: nowrap;*/
+
+    font-family: 'Trebuchet MS';
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.annotationValue {
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 12px;
+    color: #4a4a4a;
+    line-height: 21px;
+    margin-bottom: 20px;
+}
+
+.noteLink {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.noteLink:hover {
+    background-color: white;
+}
+
+/* this is a fix for the issue where dialogs jump around and takes the text-align from the body */
+.dialogFix {
+    position:absolute;
+    text-align:left;
+    border: 1px solid #8f949a;
+}
+
+
+
+
+
+.legacyPulsateBorder {
+    /*border: 5px solid #15d6ba;
+    margin: -5px;*/
+    -moz-box-shadow: 0 0 10px 3px #15d6ba;
+    box-shadow: 0 0 10px 3px #15d6ba;
+}
+
+.pulsateBorder {
+  animation-name: pulsate;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  -webkit-animation-name: pulsate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  -moz-animation-name: pulsate;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-duration: 0.9s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+}
+
+.ax_default_hidden, .ax_default_unplaced{
+    display: none;
+    visibility: hidden;
+}
+
+.widgetNoteSelected {
+    -moz-box-shadow: 0 0 10px 3px #138CDD;
+    box-shadow: 0 0 10px 3px #138CDD;
+    /*-moz-box-shadow: 0 0 20px #3915d6;
+    box-shadow: 0 0 20px #3915d6;*/
+    /*border: 3px solid #3915d6;*/
+    /*margin: -3px;*/
+}
+
+
+.singleImg {
+    display: none;
+    visibility: hidden;
+}
+
+._一级标题 {
+  font-family:'Arial Normal', 'Arial';
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}

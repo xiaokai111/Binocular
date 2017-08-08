@@ -1,0 +1,129 @@
+﻿#channel_snapshots_pane {
+	text-align: center;	
+}
+
+.min_width {
+    min-width: 380px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn_centered 
+{
+	margin: 0px auto 0px auto;
+}
+
+/* TODO: dynamically calculate margin based on button size/number of buttons */
+.nav_button_container {
+	margin-top: 20px;
+}
+
+.navBtn {
+	width: 200px;
+}
+
+.home_snapshot_pane {
+	display: inline-block;
+	position: relative;
+	height: 300px;
+	width: 352px;
+	margin: 20px 20px 20px 20px;
+	vertical-align: middle;
+}
+
+#snapshot_pane__CID_ {
+	display: none;
+}
+
+/*
+ * This is applied to the element containing the snapshot for an individual channel. The
+ * size of this element must be set explicitly in order for other elements contained within
+ * this element to be positioned properly.
+ */
+.channel_snapshot_pane {
+	display: inline-block;
+}
+
+/** TODO: chnage this around for the out of view condition.
+ */
+.home_snapshot_playpause {
+/*	margin-top: -10px; */
+}
+
+.home_snapshot_snapshot_layer {
+	position: relative;
+	z-index: 0;
+}
+
+/* gets added to home_snapshot_snapshot_layer for channels with snapshots smaller than 320x240 */
+.home_snapshot_small_snapshot_layer {
+	border: solid;
+	border-width: 1px;
+	border-color: #AAAAAA;
+}
+
+.home_snapshot_buttonmask_layer {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+}
+
+.home_snapshot_mask_layer {
+	background-color: gray;
+	position: absolute;
+	z-index: 2;
+	height: 24px;
+	width: 24px;
+	top: 0;
+	left: 0;
+	/* firefox uses "opacity," IE uses "filter: alpha" */
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.home_snapshot_button_layer {
+	position: absolute;
+	z-index: 4;
+	height: 288px;
+	width: 352px;
+	left: 0px;
+}
+
+.bad_mask_layer {
+	opacity: .3;
+}
+
+.home_snapshot_hover_layer {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 288px;
+	width: 352px;
+	z-index: 1;
+}
+
+.snapshot_caption {
+	position: relative;
+	top: 5px;
+	left: 5px;
+}
+
+.channel_snapshot_bad_layer {
+	float: left;
+}
+
+.force_view_button_container {
+	display: none;
+}
+
+#mouseover_hint_pane {
+    height: 1em;
+}
+
+#mouseover_hint_contents {
+    font-size: small;
+    font-style: italic;
+    color: #151515;
+}

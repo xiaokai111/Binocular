@@ -1,0 +1,146 @@
+/*** Content blocks ***/
+
+#header_divider
+{
+	width: 100%;
+	height: 15px;
+}
+
+#banner_block
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 30px 0px;
+	clear: left;
+}
+
+#home_link_crumb
+{
+	padding-left: 15px;	
+}
+
+#crumb_text_indent
+{
+	padding-left: 15px;	
+}
+
+.breadcrumb
+{
+	color: inherit;
+	/* padding-bottom: 0.9em;  */
+	/* font-size: 0.9em; removed to make this align with Device Status */ 
+ 	/* margin-top: 1px;  just for aligning bottom of crumb with device status with above */
+}
+
+.breadcrumb .arrow
+{
+	background: url("/img/rule/bc_arrow_blue.png") no-repeat center;
+	display: inline;
+	width: 16px;
+	height: 14px;
+	padding-left: 0.85em;
+	padding-right: 0.85em;
+	position: relative;
+	top: 0.07em;
+}
+
+.nav_shown #breadcrumb_block
+{
+    display: block;
+}
+
+.nav_right
+{
+    padding-right: 1.5em;    
+}
+
+/*** Menus ***/
+
+.menu
+{
+	font: 11px/36px Verdana, Arial, Helvetica, sans-serif;
+	list-style-type: none;
+	font-size: 1em;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 5px;
+}
+
+.menu li
+{
+	float: left;
+	margin-left: 0px;
+	margin: 0px 0px 0px 0px;
+	vertical-align: middle;
+}
+
+.menu li a
+{
+	padding: 0px 5px 1px 5px;
+	vertical-align: middle;
+	background-position: top left;
+}
+
+.ornate_menu
+{
+	font-weight: bold;
+}
+
+.simple_menu
+{
+	font-size: 0.85em;
+}
+
+/* 
+ *	Apply float settings to the actual element rather than any of the menu classes in case
+ *  we want to reuse the menu classes at some point
+ */
+#global_menu
+{
+	float: right;
+	padding-right: 1em;
+}
+
+#primary_menu
+{
+	float: left;
+	clear: left;
+    display: none;
+}
+
+.nav_shown #primary_menu
+{
+    display: block;
+}
+
+/*** Miscellaneous ***/
+
+#prod_title
+{
+	font-size: 1.3em; 
+	font-weight: bold;
+	/* border-left: solid 3px; */
+	padding: 0px 0px 0px 14px;
+	vertical-align: middle;
+	position: relative;
+	top: 8px;
+	color: #1956a7;
+}
+
+#footer_logo
+{
+	float: right;
+	background-image: url("../img/footer_logo.gif"); 
+	width : 75px;
+	height: 65px;
+}
+
+#banner_logo
+{
+	float: left;
+	background-image: url("../img/logo.png");
+	width : 67px;
+	height: 60px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	border-right: solid 3px;
+	color: #1956a7;
+}

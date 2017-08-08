@@ -1,0 +1,69 @@
+/* start of event push receiver div */
+/*set position*/
+
+#event_push_receiver {
+    width: 65%;
+    padding: 20px 0px 0px 50px; 
+    margin: 2px auto auto 135px;
+
+}
+
+/*draw the border*/
+.receiver_details_class {
+    border: 1px solid #0060cb;
+    padding: 1px;
+    margin: 5px 1px 3em 0px;
+}
+
+#receiver_mode {
+    margin-left: 5px;
+}
+
+/* make table use the whole width*/
+.event_table{
+    width: 100%
+}
+
+/* set column widths */
+col#receiver_key {
+    width: 25%;
+    text-align: right;
+}
+
+col#receiver_value {
+    width: 50%;    
+}
+col#receiver_action {
+    width: 25%;    
+}
+
+/* position text next to input fields */
+td.right {
+    text-align: right;	
+}
+
+/* make URI text box longer */
+.event_uri {
+    width: 98%;
+}
+
+.align_middle {
+    display: inline;
+    vertical-align: bottom;
+}
+
+.event_make_primary_btn {
+    float: right;
+}
+
+/* position save and cancel buttons.  Specify width to make IE happy */
+#event_push_receiver > .edit_buttons_pane {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width:300px;
+}
+
+#event_push_receiver .edit_buttons_pane > div {
+    float: right;
+}

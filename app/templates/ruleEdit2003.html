@@ -1,0 +1,249 @@
+{% extends "ruleEditBase.html" %}
+{% block ruleStyle %}
+    <link href="{{ url_for('static', filename='css/rule/rule_edit.css') }}" rel="stylesheet">
+    {#    <link href="{{ url_for('static', filename='css/rule/rule_edit2004.css') }}" rel="stylesheet">#}
+    <link href="{{ url_for('static', filename='css/rule/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/pre_settings.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/navigation.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/calibration.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/device.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/device_events.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/rborder.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/ov.all.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/rule_draw.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block RuleParams %}
+    <div class="col-md-4">
+        <div style="float: left;width: 550px;"  class="form-group">
+            <div id="rule_edit_pane">
+                <div id="expanded_markup_overlay">
+                    <div id="markup_overlay_screen" class="">
+                    </div>
+                    <div id="expanded_markup_frame">
+                        <div id="expand_border_tl" class="rborder_corner rborder_topleft">
+                        </div>
+                        <div id="expand_border_tr" class="rborder_corner rborder_topright">
+                        </div>
+                        <div id="expand_border_t" class="rborder rborder_horizontal  rborder_top">
+                        </div>
+                        <div class="border_middle">
+                            <div id="expand_border_l" class="rborder rborder_vertical rborder_left">
+                            </div>
+                            <div id="expand_border_r" class="rborder rborder_vertical rborder_right">
+                            </div>
+                            <div id="expanded_markup_pane">
+                            </div>
+                        </div>
+                        <div class="border_bottom">
+                            <div id="expand_border_bl" class="rborder_corner rborder_bottomleft">
+                            </div>
+                            <div id="expand_border_br" class="rborder_corner rborder_bottomright">
+                            </div>
+                            <div id="expand_border_b" class="rborder rborder_horizontal rborder_bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="filter_mode_overlay" class="overlay_screen"></div>
+                <div id="rule_edit_block" class="rule_edit_restricted_width">
+                    <div id="confirm_exit_dlg" class="ov_replace_text" title="unsaved_rule.title">
+                        更改未保存，是否离开本页面？
+                    </div>
+                    <div id="confirm_fullframe_dlg" class="ov_replace_text" title="full_confirmation.title">
+                        是否将这条规则应用在整个画面？如果应用，将改变对事件类型的选择。
+                    </div>
+                    <div id="confirm_fullframe_classification_dlg" class="ov_replace_text"
+                         title="classification_change.title">
+                        是否将这条规则应用在整个场景？如果应用，将改变你所做的分类选择.
+                    </div>
+                    <div id="options_dlg" class="ov_replace_text" title="options.title">
+                        <input type="radio" value="ground" name="plane" id="plane_ground"/>
+                        <label for="plane_ground" class="ov_replace_text">
+                            接地平面</label>
+                        <input type="radio" value="image" name="plane" id="plane_image"/>
+                        <label for="plane_image" class="ov_replace_text">
+                            图像平面</label>
+                    </div>
+                    <div id="rule_info_pane">
+                        <div id="markup_and_filters_pane">
+                            <div id="markup_pane" style="width:412px; margin-left: 35px; margin-top: 75px;">
+                                <div id="filters_drawing_key">
+                                    <div>
+                                        <img id="filter_drawing_key_background" alt="Background rectangle key"
+                                             src="../static/images/rule/filter-background.gif"/>
+                                        <span class="ov_replace_text">最小尺寸 </span>
+                                    </div>
+                                    <div>
+                                        <img id="filter_drawing_key_foreground" alt="Foreground rectangle key"
+                                             src="../static/images/rule/filter-foreground.gif"/>
+                                        <span class="ov_replace_text">最大尺寸 </span>
+                                    </div>
+                                </div>
+                                <div id="markup_content">
+                                    <div id="tool_palette">
+                                        <div id="tool_select" class="toolbtn selected help_cursor"></div>
+                                        <div id="tool_polygon" style="padding-left: -30px;"
+                                             class="toolbtn aoi_only help_cursor"></div>
+                                        <div id="tool_line" class="toolbtn tripwire_only help_cursor"></div>
+                                        <div id="action_buttons">
+                                            <div id="action_direction"
+                                                 class="toolbtn tripwire_only disabled help_cursor">
+                                            </div>
+                                            <div id="action_delete" class="toolbtn disabled help_cursor">
+                                            </div>
+                                        </div>
+                                        <div id="options_buttons">
+                                            <div id="config_options" class="toolbtn aoi_only help_cursor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="edit_snapshot_pane">
+                                        <div id="snapshot_caption">
+                                        </div>
+                                        <div id="snapshot_frame">
+                                            <p id="snapshot_loading_message" class="ov_replace_text">
+                                                加载场景快照...</p>
+                                            <img id="snapshot" class="snapshot ov_replace_text"
+                                                 src="../static/images/rule/snapshot-loader.gif"
+                                                 alt="rule_edit_snapshot.alt" title=""/>
+                                            <img id="hs" src="">
+                                            <canvas id="snapshot_markup" width="352" height="288"></canvas>
+                                            <canvas id="snapshot_interactive_drawing" width="352"
+                                                    height="288"></canvas>
+                                        </div>
+                                        <div id="snapshot_actions_pane">
+                                            <div id="snapshot_warning">
+                                            </div>
+                                            <span class="playpause_container">
+                                            <input id="playpause_btn" type="image" src="../static/images/rule/play.png"
+                                                   alt="play_pause.alt"/></span>
+                                            <!--<span id="expand_snapshot"></span>-->
+                                        </div>
+                                        <div id="markup_hint_message" class="markup_hint ov_replace_text">
+                                            单击鼠标右键完成警戒线
+                                        </div>
+                                        <div id="markup_warning_message" class="markup_warning ov_replace_text">
+                                            并不是所有的标记都可以看见
+                                        </div>
+                                        <div id="markup_error_message" class="invalid">
+                                        </div>
+                                        <div id="filter_markup_buttons_pane" style="display: none">
+                                            <div class="save_btn_container">
+                                                <div class="btn btnSm" style="display: none">
+                                                    <input id="save_filter_markup_btn" type="button" value="保存"/>
+                                                </div>
+                                            </div>
+                                            <div class="btn btnSm" style="display: none">
+                                                <input id="cancel_filter_markup_btn" type="button" value="取消"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="filters_pane" style="width:412px; margin-left: 35px;">
+                                <div id="filter_list_pane" style="height: 70px;">
+                                    <table id="filter_list" class="tbl" summary="List of rule filters">
+                                        <tr id="minimum_size_filter">
+                                            <td>
+                                                <a id="minimum_size_filter_link" href="#MinimumSizeFilter"
+                                                   class="filter_name">
+                                                    闭锁器</a>
+                                            </td>
+                                        </tr>
+                                        <tr id="maximum_size_filter" >
+                                            <td>
+                                                <a id="maximum_size_filter_link" href="#MaximumSizeFilter"
+                                                   class="filter_name">
+                                                    入门区域/地板区域</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" style="height: 100%;margin-top: 80px;">
+        <div style="height: 85%;">
+            <div class="row">
+                <div class="col-md-2" >
+                    <label>敏感度:</label>
+                </div>
+
+                <div  class="col-md-8">
+                    <input  id="slider_1" class="auto_slide" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="3" />
+                    <span id="brightness_current_slider_val_label">{{ form.HS_Sensitivity(size=1,readonly=True, class='gray RuleEdit') }}</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3" >
+                    <label>延迟时长(s):</label>
+                </div>
+
+                <div style="margin-left: -50px" class="col-md-8">
+                    <input  id="slider_2" class="auto_slide" type="text" data-slider-min="1" data-slider-max="60" data-slider-step="1" data-slider-value="3" />
+                    <span id="brightness_current_slider_val_label">{{ form.HS_RuleDelay(size=1,readonly=True, class='gray RuleEdit') }}</span>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label >预置方案:</label>
+                </div>
+
+                <div class="col-md-8">
+                    {{ form.Rule_Plan(style='width:270px;height:100px',class='RuleEdit') }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    {{ form.Rule_RuleLevel(style='display: none' ,id='level') }}
+                    <label >报警等级:</label>
+                </div>
+
+                <div class="col-md-8">
+                    <button id="btn_1" name="Rule_RuleLevel" type="button" class="btn btn-primary RuleEdit" value="1">重大事件</button>
+                    <button id="btn_3" name="Rule_RuleLevel" style="float: left" type="button" class="btn btn-primary RuleEdit" value="3">一般管理事件</button>
+                    <button id="btn_2" name="Rule_RuleLevel" style="float: left" type="button" class="btn btn-primary RuleEdit" value="2">疑似事件</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="height:7% ;">
+            <div class="row">
+                <div class="col-md-8">
+                    <button id="sumbit" style="float: left;"  class="btn btn-primary">提交</button>
+                    <a style="float: right"  href="{{ url_for('rule') }}" class="btn btn-primary">返回</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block ruleScript %}
+    <script src="{{ url_for('static',filename='scripts/rule/excanvas.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/jquery.i18n.properties-1.0.3-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/jquery.validate.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/objectvideo.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/ovready.js') }}"></script>
+    {#    <script src="{{ url_for('static',filename='scripts/rule/ovreadyjson.js') }}"></script>#}
+    <script src="{{ url_for('static',filename='scripts/rule/geometry.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/snapshot_player.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/snapshot_markup.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/snapshot_controller.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/jquery.ovext.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/rule_select_dialog.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/schedules_pane.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/ruleEditBase.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/rule/ruleEdit2003.js') }}"></script>
+{% endblock %}

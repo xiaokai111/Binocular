@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+<style>
+
+</style>
+{% block style %}
+    <link href="{{ url_for('static', filename='css/parameter.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="u0_div" class="">
+    <div id="u1" class="">
+
+    <form action="/parameter" method="post">
+        {{ parameterForm.hidden_tag() }}
+        <table width="660" cellspacing="0px">
+            <tr>
+                <td id="" class="u2" width="124">本地配置</td>
+                <td width="536">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="" class="u3_tb" colspan="2">
+                    <div id="" class="u3_div">
+                        <div id="" class="u3"></div>
+                    </div>
+                    <!--标题条-->
+                    <div class="u4">
+                        <img id="" class="u4_img" src="../static/images/u4.png"/>
+                    </div>
+                    <!--横线-->
+                </td>
+            </tr>
+        </table>
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td class="ax_default" width="100">协议类型：</td>
+
+                <td class="ax_default">
+                    <div class="radio">{{ parameterForm.protocolType }}</div>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+        <table width="660" cellspacing="0px">
+            <tr>
+                <td id="" class="u2" width="124">系统配置</td>
+                <td width="536">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="" class="u3_tb" colspan="2">
+                    <div id="" class="u3_div">
+                        <div id="" class="u3"></div>
+                    </div>
+                    <!--标题条-->
+                    <div class="u4">
+                        <img id="" class="u4_img" src="../static/images/u4.png"/>
+                    </div>
+                    <!--横线-->
+                </td>
+            </tr>
+        </table>
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td class="ax_default" width="100">设备名称：</td>
+                <td class="axdefault">
+                    {{ parameterForm.deviceName }}
+                    {% for error in parameterForm.errors.deviceName %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">设备编号：</td>
+                <td class="axdefault">
+                    {{ parameterForm.deviceNum(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">设备型号：</td>
+                <td class="axdefault">
+                    {{ parameterForm.deviceType(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">设备序列号：</td>
+                <td class="axdefault">
+                    {{ parameterForm.deviceSerialNum(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">主控版本：</td>
+                <td class="axdefault">
+                    {{ parameterForm.masterVersion(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">编码版本：</td>
+                <td class="axdefault">
+                    {{ parameterForm.codeVersion(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">通道个数：</td>
+                <td class="axdefault">
+                    {{ parameterForm.channelCount(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <table width="660" cellspacing="0px">
+            <tr>
+                <td id="" class="u2" width="124">网络设置</td>
+                <td width="536">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="" class="u3_tb" colspan="2">
+                    <div id="" class="u3_div">
+                        <div id="" class="u3"></div>
+                    </div>
+                    <!--标题条-->
+                    <div class="u4">
+                        <img id="" class="u4_img" src="../static/images/u4.png"/>
+                    </div>
+                    <!--横线-->
+                </td>
+            </tr>
+        </table>
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td class="ax_default" width="100">设备IPv4地址 ：</td>
+                <td class="axdefault" width="150">
+                    {{ parameterForm.ipAddress(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">IPv4子网掩码：</td>
+                <td class="axdefault" width="150">
+                    {{ parameterForm.subnetMask(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">IPv4默认网关：</td>
+                <td class="axdefault gray" width="150">
+                    {{ parameterForm.defaultGateway(readonly=True, class='gray') }}
+                </td>
+                <td class="axdefault">
+
+                </td>
+            </tr>
+        </table>
+
+        <table width="660" cellspacing="0px">
+            <tr>
+                <td id="" class="u2" width="124">端口设置</td>
+                <td width="536">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="" class="u3_tb" colspan="2">
+                    <div id="" class="u3_div">
+                        <div id="" class="u3"></div>
+                    </div>
+                    <!--标题条-->
+                    <div class="u4">
+                        <img id="" class="u4_img" src="../static/images/u4.png"/>
+                    </div>
+                    <!--横线-->
+                </td>
+            </tr>
+        </table>
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td class="ax_default" width="100">HTTP端口 ：</td>
+                <td class="axdefault">
+                    {{ parameterForm.httpPort }}
+                    {% for error in parameterForm.errors.httpPort %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">RTSP端口：</td>
+                <td class="axdefault">
+                    {{ parameterForm.rtspPort }}
+                    {% for error in parameterForm.errors.rtspPort %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="ax_default" width="100">HTTPS端口：</td>
+                <td class="axdefault">
+                    {{ parameterForm.httpsPort }}
+                    {% for error in parameterForm.errors.httpsPort %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </td>
+                <td class="axdefault">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <table width="660" cellspacing="0px">
+            <tr>
+                <td id="" class="u2" width="124">音视频设置</td>
+                <td width="536">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="" class="u3_tb" colspan="2">
+                    <div id="" class="u3_div">
+                        <div id="" class="u3"></div>
+                    </div>
+                    <!--标题条-->
+                    <div class="u4">
+                        <img id="" class="u4_img" src="../static/images/u4.png"/>
+                    </div>
+                    <!--横线-->
+                </td>
+            </tr>
+        </table>
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td class="ax_default" width="100">码流类型 ：</td>
+                <td class="ax_default">
+                    <div class="radio">{{ parameterForm.codeStreamType }}</div>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td class="ax_default" width="100">分辨率 ：</td>
+                <td class="axdefault">
+                    <div class="radio">{{ parameterForm.screenResolution }}</div>
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td class="ax_default" width="100">码率类型 ：</td>
+                <td class="axdefault">
+                    <div class="radio">{{ parameterForm.codeRateType }}</div>
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td class="ax_default" width="100">视频帧率 ：</td>
+                <td class="axdefault">
+                    {{ parameterForm.videoFrameRate }}
+                    {% for error in parameterForm.errors.videoFrameRate %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td class="ax_default" width="100">视频编码 ：</td>
+                <td class="axdefault">
+                    <div class="radio">{{ parameterForm.videoCoding }}</div>
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+
+
+        <table width="781" cellspacing="0px" class="u5_tab" id="">
+            <tr>
+                <td width="307" height="79">&nbsp;</td>
+
+                <td width="222">
+                    <input name="" class="input1" type="submit" value="提交"/>
+                </td>
+                <td width="244">&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='scripts/parameter.js') }}"></script>
+{% endblock %}

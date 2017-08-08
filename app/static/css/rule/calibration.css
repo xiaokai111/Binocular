@@ -1,0 +1,120 @@
+.calibration_restricted_width {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.step {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#calibration_pane #left_side {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#calibration_pane #right_side {
+    float: right;
+    margin: 1em 10px 10px 0;
+    /* HACK: Set max-width to prevent IE from filling width of page */
+    max-width: 60%;
+}
+
+#camera_pane {
+    margin-bottom: 15px;
+}
+
+#calibration_pane #tool_palette {
+    float: left;
+    height: 100%;
+    padding: 4px 8px 8px 8px;
+}
+
+#calibration_pane #tool_palette.reduced_padding {
+    padding-top: 4px;
+}
+
+#calibration_pane #tool_palette div#action_buttons {
+    border-top: solid 1px gray;
+    margin-top: 8px;
+    padding-top: 8px;
+    width: auto;
+    height: auto;
+	cursor: default;
+}
+
+#calibration_pane #snapshot_pane {
+    float: left;
+    overflow: hidden;
+    margin-top: 1em;
+}
+
+#calibration_pane #markup_pane {
+    float: left;
+    overflow: hidden;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    width: 380px;
+    padding: 10px 8px 10px 8px;
+}
+
+#calibration_pane #tool_palette *.toolbtn {
+    background-image: url(../img/palette.png);
+	cursor: pointer;    
+    width: 32px;
+    height: 32px;
+    border: solid 1px transparent;
+    margin-bottom: 4px;
+}
+
+#calibration_pane #tool_palette *.toolbtn.disabled {
+	cursor: default;
+}
+
+#calibration_pane #tool_palette *.toolbtn.selected {
+    border-color: black;
+    background-color: #bac2ff;
+}
+
+
+#instructions_pane {
+    float: right;
+}
+
+#calibration_pane #buttons_pane {
+    margin: auto 5px 25px auto;
+    padding-top: 25px;
+    overflow: hidden;
+    clear: both;
+}
+
+#calibration_pane #tool_palette #action_buttons div + div {
+    margin-top: 8px;
+}
+
+/*
+ * Why put the buttons in the lower-right corner?
+ * See: http://msdn.microsoft.com/en-us/library/aa511279.aspx
+ * See: http://developer.apple.com/documentation/userexperience/Conceptual/AppleHIGuidelines/XHIGWindows/XHIGWindows.html#//apple_ref/doc/uid/20000961-TPXREF27
+ */
+#calibration_pane #buttons_pane > div {
+    float: right;
+}
+
+#calibration_pane #tool_select               { background-position: 0 0 }
+#calibration_pane #tool_select.disabled      { background-position: 0 -100% }
+
+
+#calibration_pane #action_add             { background-position: -1100% 0 }
+#calibration_pane #action_add.disabled    { background-position: -1100% -100% }
+
+#calibration_pane #action_delete          { background-position: -400% 0 }
+#calibration_pane #action_delete.disabled { background-position: -400% -100% }
+
+#calibration_validation_error {
+    margin: 25px 5px 25px auto;
+    text-align: right;
+    display: none;
+}

@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+{% block style %}
+    <link href="{{ url_for('static', filename='css/preview.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-slider.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
+
+{% endblock %}
+
+{% block content %}
+    <div class="tab" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist" style="margin-top:0px;" id="docTabs">
+            <li role="presentation" class="active">
+                <a href="#image_display_setting"
+                   aria-controls="home" role="tab" data-toggle="tab">图像显示设置</a>
+            </li>
+            <li role="presentation">
+                <a href="#OSD_setting"
+                   aria-controls="profile" role="tab" data-toggle="tab">OSD 设置</a>
+            </li>
+            <li role="presentation">
+                <a href="#time_setting"
+                   aria-controls="messages" role="tab" data-toggle="tab">时间设置</a>
+            </li>
+            <li role="presentation">
+                <a href="#demarcate"
+                   aria-controls="messages" role="tab" data-toggle="tab">标定</a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content" style="height: 600px;">
+
+            <div style="float:left;height: 100%;" >
+                <object class="vlc" type='application/x-vlc-plugin'  events='True' width="520" height="340" codebase="http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe">
+                    <param name='mrl' value='rtsp://admin:12345@192.168.1.151:8554/HonicsDevStream' />
+                    <param name='volume' value='50' />
+                    <param name='autoplay' value='true' />
+                    <param name='loop' value='false' />
+                    <param name='fullscreen' value='false' />
+                    <embed type="application/x-vlc-plugin" pluginspage="http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe" />
+                </object>
+                {#                <div style="float:left;height: 100%;" >#}
+                {#                    <img src="../static/images/test1.png">#}
+                {#                </div>#}
+            </div>
+            <div role="tabpanel" class="tab-pane fade in active" id="image_display_setting">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-1">亮度</label>
+                        <div class="col-sm-3">
+                            <input  id="slider_18 " class="auto_slide" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="3" />
+                            <span id="brightness_current_slider_val_label">{{ form.input_18(size=1,readonly=True, class='gray NoName') }}</span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-sm-1">对比度</label>
+                        <div class="col-sm-3">
+                            <input id="slider_19" class="auto_slide" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="3" />
+                            <span id="contrast_current_slider_val_label">{{ form.input_19(size=1,readonly=True, class='gray NoName') }}</span>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-sm-1">饱和度</label>
+                        <div class="col-sm-3">
+                            <input id="slider_20" class="auto_slide" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="3"  />
+                            <span id="saturability_current_slider_val_label">{{ form.input_20(size=1,readonly=True, class='gray NoName') }}</span>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-sm-1">锐度</label>
+                        <div class="col-sm-3">
+                            <input id="slider_21" class="auto_slide" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="3" />
+                            <span id="acutance_current_slider_val_label">{{ form.input_21(size=1,readonly=True, class='gray NoName') }}</span>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-sm-1">曝光时间</label>
+                        <div class="col-sm-3">
+                            {{ form.select_22(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">逆光补偿</label>
+                        <div class="col-sm-3">
+                            {{ form.select_23(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">宽动态</label>
+                        <div class="col-sm-3">
+                            {{ form.select_24(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">强光抑制</label>
+                        <div class="col-sm-3">
+                            {{ form.select_25(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">白平衡</label>
+                        <div class="col-sm-3">
+                            {{ form.select_26(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">自动增益控制</label>
+                        <div class="col-sm-3">
+                            {{ form.select_27(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label class="col-sm-1">日夜模式</label>
+                        <div class="col-sm-3">
+                            {{ form.select_28(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="OSD_setting" style="height: 300px;">
+                <div class="row">
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">显示日期</label>
+                        <div class="col-sm-3">
+                            {{ form.select_29(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">显示时间</label>
+                        <div class="col-sm-3">
+                            {{ form.select_30(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">时间位置</label>
+                        <div class="col-sm-3">
+                            {{ form.select_31(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">叠加编号</label>
+                        <div class="col-sm-3">
+                            {{ form.select_32(style='width:200px',class='NoName') }}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="time_setting">
+                <div class="row">
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1"></label>
+                        <div class="col-sm-3">
+                            <label class="checkbox-inline">
+                                <input remark="npt" class="NoName" type="radio" name="radio_33" id="radio_33" value="57" {{ radioData['npt'] }} >NPT校时
+                            </label>
+
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">时钟同步服务器地址</label>
+                        <div class="col-sm-3">
+                            {{ form.input_34(style='width:200px',class='NoName npt') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">NTP端口</label>
+                        <div class="col-sm-3">
+                            {{ form.input_35(style='width:200px',class='NoName npt') }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1">校时时间间隔</label>
+                        <div class="col-sm-3">
+                            {{ form.input_36(style='width:200px',class='NoName npt') }}
+                            <label>分钟</label>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px;" class="col-sm-1"></label>
+                        <div class="col-sm-3">
+                            <label class="checkbox-inline">
+                                <input remark="no_auto" class="NoName" type="radio" name="radio_33" id='radio_33' value="58" {{ radioData['no_auto'] }}>手动校时
+                            </label>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <label style="width:160px" class="col-sm-1  ">设备时间</label>
+                        <div class="controls col-sm-3" >
+                            <div class="input-append date form_datetime">
+                                <input size="16" style="width: 200px" type="text" id="end_time" name="EndTime" value="" class="m-wrap no_auto">
+                                <span class="add-on"><i class="icon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="demarcate">
+                <div  class="row">
+                    <div  class="form-group">
+                        <div class="controls col-sm-3" >
+                            <button id="calibration" type="button" class="btn btn-primary" value="start">开始标定</button>
+                        </div>
+
+                    </div>
+                    <br/>
+                    <div class="form-group" style="width: 710px;float: left;margin-left: 10px" >
+                        <div  id="myprog" class="progress  progress-striped active"  >
+                            <div  id="prog" class="progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="" aria-valuemin="0" aria-valuemax="100"
+                                 style="width: 0%;">
+                                <span class="sr-only">待启动</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="form-group" style="width: 710px; height: 315px;border: double;float: left;margin-left: 10px" >
+                        <span>标定结果图：</span>
+                        <br/>
+                        <img  id="bdResult" src="data:image/jpg;base64,{{ imageData }}">
+                    </div>
+
+                    <div class="form-group" style="width: 710px; height: 315px;float: left;" >
+                        <div class="controls col-sm-3" >
+                            <button id="test" type="button" class="btn btn-primary" value="start">查看</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/bootstrap-slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.fr.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/preview.js') }}"></script>
+{% endblock %}

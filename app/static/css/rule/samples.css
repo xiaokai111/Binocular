@@ -1,0 +1,21 @@
+.example
+{
+	position: relative;
+	left: 25px;
+	font-size: 0.80em;
+	padding-bottom: 10px;
+}
+
+.lnkTop
+{
+	font-size: 0.65em;
+	clear: both;
+	float: right;
+	margin-left: 5px;
+}
+
+.indent
+{
+	position: relative;
+	left: 20px;	
+}

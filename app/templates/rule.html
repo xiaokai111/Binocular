@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block style %}
+    <link href="{{ url_for('static', filename='css/preview.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-slider.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+    <div class="tab" role="tabpanel">
+
+    <!-- Tab panes -->
+    <div class="tab-content" style="height: 600px;">
+        <div style="float:left;height: 100%;" >
+            <div style="float:left;height: 100%;" >
+{#                <span style="width: 352px;height: 288px;">#}
+{#                    <img  src="../static/images/rule.png">#}
+{#                </span>#}
+                <object  class="vlc" type='application/x-vlc-plugin'  events='True' width="520" height="340" codebase="http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe">
+                    <param name='mrl' value='rtsp://admin:12345@192.168.1.151:8554/HonicsDevStream' />
+                    <param name='volume' value='50' />
+                    <param name='autoplay' value='true' />
+                    <param name='loop' value='false' />
+                    <param name='fullscreen' value='false' />
+                    <embed type="application/x-vlc-plugin" pluginspage="http://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe" />
+                </object>
+            </div>
+
+            <div style="float:left">
+                <table style="display:inline" class="table table-striped">
+                    {%  for rule in ruleData[0:8] %}
+                        <tr>
+                            <td> <p>{{ form.ck_(checked=rule.activeflag)}}</p><span style="display: none">{{ rule.ruleid }}</span></td>
+                            <td><a href='{{ rule.url }}'>{{ rule.urlname }}</a></td>
+                            <td><span>{{rule.desc  }}</span></td>
+                            <td><span style="color: #1d943b" id="{{ 'status'+rule.ruleid[0:4] }}">{{ rule.status }}</span></td>
+                        </tr>
+                    {%endfor %}
+                </table>
+
+                <table style="display:inline;margin-left: 50px" class="table table-striped">
+                    {%  for rule in ruleData[8:] %}
+                        <tr>
+                            <td> <p>{{ form.ck_(checked=rule.activeflag)}}</p><span style="display: none">{{ rule.ruleid }}</span></td>
+                            <td><a href='{{ rule.url }}'>{{ rule.urlname }}</a></td>
+                            <td><span>{{rule.desc  }}</span></td>
+                            <td><span style="color: #1d943b" id="{{ 'status'+rule.ruleid[0:4] }}">{{ rule.status }}</span></td>
+                        </tr>
+                    {%endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static',filename='scripts/rule.js') }}"></script>
+{% endblock %}

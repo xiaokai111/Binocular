@@ -1,0 +1,50 @@
+#notificationsbox a
+        {
+            color: #666;
+        }
+        #notificationsbox a:hover
+        {
+            color: #333;
+        }
+
+        #notificationsbox
+        {
+            width: 375px;
+            background: #fff;
+            border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            display: none;
+        }
+            #notificationsbox h4 {
+                width: 375px;
+                padding: 15px 0;
+                background: #999 url(../../img/bg_grey_dark_med.png) repeat-x top;
+                text-align: center;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                -moz-border-radius-topright: 15px;
+                -moz-border-radius-topleft: 15px;
+                text-shadow: 1px 1px 1px #e0e0e0;
+                font-size: 28px;
+                border-bottom: 1px solid #777;
+            }
+        #notificationsbox li
+        {
+            padding: 15px;
+            width: 345px;
+            border-bottom: 1px solid #ccc;
+            background: url(../../img/bg_fade_up.png) repeat-x bottom;
+        }
+        #notificationsbox li h5
+        {
+            font-size: 13px;
+        }
+        #notificationsbox li p
+        {
+            font-size: 10px;
+        }
+        #notificationsbox p.loadmore
+        {
+            padding: 15px;
+        }

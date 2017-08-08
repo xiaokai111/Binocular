@@ -1,0 +1,64 @@
+/* TODO: share CSS styles with parameter page directly instead of copy & paste? */
+
+table#sliders_list {
+    border-collapse: collapse;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    border-right: none;
+}
+
+col.restart_col {
+    width: 1%;
+}
+
+col.slider_name_col {
+    width: 50%;
+}
+
+col.slider_value_col {
+    width: 39%;
+}
+
+col.reset_col {
+    width: 5%;
+}
+
+col.help_col {
+    width: 5%; 
+}
+
+#context_pane {
+    float: left;
+    padding-right: 15px;
+    width: 25%;
+}
+
+#sliders_pane {
+    width: 75%;
+}
+
+#buttons_pane {
+    margin-top: 10px;
+}
+
+#advanced_button_container {
+    float: left;
+}
+
+#save_cancel_buttons_container {
+    float: right;
+}
+
+#save_cancel_buttons_container > div {
+    float: right;
+    margin-left: 10px;
+}
+
+.unsaved_slider {
+    font-weight: bold;
+}

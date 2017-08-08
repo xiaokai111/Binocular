@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block style %}
+    <link href="{{ url_for('static', filename='css/bootstrap-slider.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/rule/rule_edit_base.css') }}" rel="stylesheet">
+    {% block ruleStyle %}
+
+    {% endblock %}
+{% endblock %}
+
+{% block content %}
+    <span id="ruleid" style="display: none">{{ ruleid }}</span>
+    {#    <input id="ruleId" value="{{ ruleid }}" type="hidden"  ></input>#}
+    <div class="container-fluid" style="height: 700px;">
+        <div class="row" style="height: 100%">
+            {% block RuleParams %}
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/bootstrap-slider.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/ruleEditBase.js') }}"></script>
+    {% block ruleScript %}
+    {% endblock %}
+{% endblock %}
+

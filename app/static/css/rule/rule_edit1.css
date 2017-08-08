@@ -1,0 +1,614 @@
+.rule_edit_restricted_width {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rule_info_pane {
+    width: 97%;
+    margin: 0 5% 5px 0;
+    padding: 0 10px 10px 10px;
+    /* use overflow: hidden to force the parent pane (this one) to the size of the floated
+     * contents (events_pane and rule_and_schedules_pane). */
+    overflow: hidden;
+}
+
+#rule_edit_block #buttons_pane {
+    clear: both;
+}
+
+/*
+ * Why put the buttons in the lower-right corner?
+ * See: http://msdn.microsoft.com/en-us/library/aa511279.aspx
+ * See: http://developer.apple.com/documentation/userexperience/Conceptual/AppleHIGuidelines/XHIGWindows/XHIGWindows.html#//apple_ref/doc/uid/20000961-TPXREF27
+ */
+#rule_edit_block #buttons_pane > div {
+    float: right;
+}
+
+.save_btn_container {
+    margin-left: 20px;
+}
+
+#events_pane {
+    width: 95%;
+    border: solid 1px black;
+    height: 120px;
+    margin: 0 auto 0 auto;
+}
+
+
+#expanded_markup_overlay {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}
+
+#expanded_markup_frame {
+    position: absolute; 
+    margin: 0;
+    padding: 0;
+    border-width: 0;  
+}
+
+#expanded_markup_pane {
+    background-color: white;
+    min-height: 100%;
+    padding-top: 5px;
+}
+
+.overlay_screen {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.75;    
+}
+
+#filter_mode_overlay {
+    z-index: 10;
+}
+
+#markup_and_filters_pane {
+    overflow: hidden;
+    margin-top: 0.2em;
+}
+
+#markup_pane {
+    overflow: hidden;
+    background-color: white;
+    border: solid 1px gray;
+    margin-bottom: 20px;
+    width: 380px;
+    padding: 10px 8px 10px 8px;
+}
+
+#markup_content {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#filters_drawing_key {
+    display: none;
+    background-color: #EDF3FE;
+    position: absolute;
+    top: 2.5em;
+    right: 10px;
+    height: 168px;
+    width: 180px;
+    border: solid 1px black;
+    overflow: hidden;
+}
+
+#filters_drawing_key > div {
+    position: relative;
+    top: 75px;
+}
+
+#filters_drawing_key > div:first-child {
+    top: 0;
+}
+
+#filters_drawing_key span {
+    position: absolute;
+    top: 1em;
+    left: 91px;
+}
+
+#filters_drawing_key img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 68px;
+    border-style: none;
+}
+
+#filters_drawing_key_background {
+    height: 52px;
+}
+
+#filters_drawing_key_foreground {
+    height: 76px;
+}
+
+#rule_and_schedules_pane {
+    float: right;
+    margin: 0.2em 10px 10px 0;
+    /* HACK: Set max-width to prevent IE from filling width of page */
+    max-width: 60%;
+}
+
+#filters_pane {
+    overflow: hidden;
+    width: 398px;
+    height: 100%;
+    border: solid 1px gray;
+    margin: 0;
+}
+
+#create_filter_pane {
+    padding: 7px 0 8px 8px;
+}
+
+#filter_help_container {
+    float: right;
+    margin: 2px 5px 0 0;
+}
+
+#filter_help {
+    border-style: none;
+    padding: 4px 0 0 0; 
+}
+
+#filter_list_pane {
+    border-top: #DDDDDD 1px solid;
+}
+
+#filter_list {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: #FFFFFF;
+    border-style: none;
+}
+
+col#filter_name_col   { width: auto; }
+
+col#filter_action_col { width: 16px; }
+
+table#filter_list tr { display: none; }
+
+table#filter_list td {
+    border-style: none;
+    padding: 8px 8px 8px 8px;
+    vertical-align: middle;
+}
+
+#filter_max_size_ratio_form {
+    float: right;
+}
+
+#filter_max_size_ratio_error {
+    display: none;
+}
+
+.details_subpane {
+    overflow: hidden;
+    margin-bottom: 1.2em;
+    width: 500px;
+}
+
+#rule_name_label {
+    margin-top: 2px;
+}
+
+.required {
+    font-weight: bold;
+}
+
+.rule_edit_field_label {
+    text-align: left;
+    width: auto;
+    float: left;
+    padding-right: 10px;
+}
+
+.rule_edit_field_content {
+    width: auto;
+    float: left;
+}
+
+.classification_item_container {
+    margin-left: 0.5em;
+    display: none;
+}
+
+#event_type_selection_list {
+    width: 398px;
+    float: left;
+    border: solid 1px #7497BA;
+}
+
+.invalid_group {
+    background-color: #FEF1EC;
+}
+
+.group_invalid_message {
+    display: none;   
+}
+
+.section_title {
+    background-color: #E9EFFA;
+    text-align: left;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+*.section_title.invalid {
+    background-color: #FEF1EC;
+}
+
+#classification_error_message {
+    display: none;
+    font-weight: normal;
+    padding-left: 0.5em;
+}
+
+#event_type_list {
+    clear: both;
+    width: 400px;
+}
+
+#event_type_list.invalid {
+    background-color: #FEF1EC;
+}
+
+#event_type_list_error_message {
+    display: none;
+    background-color: #FEF1EC;
+    padding: 0.5em;
+}
+    
+.event_type,
+.action_group_container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+}
+
+.event_type_name {
+    vertical-align: middle;
+}
+
+.no_checkbox_event_type {
+    padding-left: 3em;
+}
+
+.action_group_checkbox,
+.event_type_checkbox {
+    vertical-align: middle;
+    margin-left: 2em;
+}
+
+.event_type_details {
+    margin-left: 3em;
+    display: none;
+    margin-right: 1em;
+}
+
+.event_type_details_displayed {
+    display: block;    
+}
+
+.event_type_details label.invalid {
+    display: block;
+}
+
+.event_list_title_token {
+    display: none;
+}
+
+#unknown_event_list_title {
+    font-style: italic;
+    display: inline;
+}
+
+#alert_text {
+    width: 99%;
+}
+
+#alert_text_label {
+    margin-top: 2px;
+}
+
+.custom_response_class {
+    display: inline;
+    float: left;
+}
+.custom_response_key_col{
+    width: 30%;
+}
+
+.custom_response_value {
+    width: 100%;
+}
+
+.custom_response_delete {
+    padding-left: 10px;
+}
+
+#add_rows {
+    padding-left: 5px;
+}
+
+.rule_edit_input_field {
+    width: 99%;
+}
+
+/* --------add schedules------------*/
+
+#schedule_table_subpane, #schedule_edit_subpane {
+    clear: left;
+    margin-top: 1.2em;
+    padding-left: 27px;
+}
+
+/* hiden label to align the schedule table */ 
+#schedule_table_label {
+    visibility: hidden;
+    width: 70px;
+}
+
+/* select drop down */
+.schedule_select_container {
+    border-style: none;
+    float: left;
+    width: 400px;
+}    
+
+/*set-up layout for small schedule table */
+.schedule_container {
+    float: left;
+    width: 473px;
+    margin-top: 25px; 
+
+}
+
+.schedule_edit_container {
+    float: left;
+    width: 400px;
+    margin-top: 5px;
+    margin-left: 73px;    
+} 
+
+.section_title > th {
+    padding: 0px 0px 1px 3px;
+}
+
+.schedule_row td {
+    border-top: 2px solid #7497BA;
+    border-bottom: 2px solid #7497BA;
+}
+
+.txt_schedule_time {
+    width: 75px;
+    height: 14px;
+}
+    
+.border_right {
+    border-right: 2px solid #7497BA;
+}
+
+.border_left {
+    border-left: 2px solid #7497BA;    
+}
+
+.border_collapse {
+    border-collapse: collapse;
+}
+
+.schedules {
+    empty-cells: show;    
+}
+
+.schedules tr th {
+    border: 1px solid #0060cb;
+    text-align: center;
+    margin-left: 70px;
+    width: 56.2px;
+}
+
+.schedules tr.even td {
+    border-top: 1px solid gray;
+}
+
+.schedules tr.odd td {
+    border-top: 1px dashed gray;
+}
+
+.schedules td {
+    border-right: 1px solid #0060cb;
+    height: 1px;
+    width: 57px;
+    padding: 2px;
+}
+
+.schedule_edit td {
+    padding: 2px;
+}
+
+/* no border on right side to avoid double border */
+.schedule_container #day6  {
+    border-style: none;
+}
+
+td.d0  {
+    border-left: 1px solid #0060cb;
+}
+
+tr#time1410 td{
+    border-bottom: 1px solid #7497BA;
+}
+
+.selected_timeblock{
+    background-color: blue;
+}
+
+.schedule_edit_field_label {
+    float: left;
+    width: 68px;
+    text-align: right;
+    border-top: 1px solid gray;
+    padding-right: 5px;
+}
+
+div.schedule_edit_field_label {
+    visibility: hidden;   
+}
+
+#edit_btn {
+    float: right;
+}
+
+#edit_btn_container {
+    float: right;
+}
+
+#schedules_pane .align {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#schedules_pane .align_right {
+    float: right;
+    text-align: right;
+}
+#schedules_pane .align_left {
+    float: left;
+    text-align: left;
+}
+
+/*add schedule edit styles */
+.schedule_delete {
+    margin-top: 1%;
+}
+
+/* center validation error messages for the schedules_pane div */
+#schedules_pane .invalid {
+    text-align: center;
+}
+
+/*
+ *********Troubleshooting icons*************************************
+ */
+#troubleshoot_link_events {
+	float: right;
+    padding-right: 5px;
+}
+
+#troubleshoot_link_filters {
+	float: right;
+    padding-right: 8px;
+}
+
+.markup_hint {
+	display: none;
+	margin-top: 10px;
+	text-align: center;
+	font-style: italic;
+	font-size: small;
+}
+
+.markup_warning {
+	display: none;
+	margin-top: 10px;
+	text-align: center;
+    color: red;
+}
+
+.action_group_contents {
+    width: 345px;
+    margin-left: 40px;
+    display: none;
+    margin-right: 5px;
+}
+
+.event_type_inner_description {
+    display: inline-block;
+    width: 315px;
+    vertical-align: top;
+}
+
+.action_group_option_container {
+    display: none;
+}
+
+.indented_sub_controls {
+    position: relative;
+    left: 26px;
+}
+
+#occupancy_threshold_min_time_inputs {
+    margin-top: 0.3em;
+}
+
+/*
+ * Pick Rule dialog box
+ */
+#pick_rsrc_dlg > p   { margin-bottom: 1em; }
+
+#pick_rsrc_dlg .thumbnail {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#pick_rsrc_dlg .thumbnail_pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 120px;
+}
+
+#pick_rsrc_dlg .dlg_columns {
+    position:relative;
+    min-height: 120px;
+    width: 100%;
+}
+
+#pick_rsrc_dlg .selection_pane {
+    margin-left: 170px;
+    min-width: 60%;
+    width: auto;
+    overflow: hidden;
+}
+
+#pick_rsrc_dlg .selection_pane > div { width: 48%; }
+
+#pick_rsrc_dlg .channel_selection_pane { float: left;  }
+
+#pick_rsrc_dlg .rule_selection_pane    { float: right; }
+
+#pick_rsrc_dlg label {
+    display: block;
+    font-weight: bold;
+}
+
+#pick_rsrc_dlg select {
+    width: 100%;
+    overflow: hidden;
+}

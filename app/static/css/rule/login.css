@@ -1,0 +1,40 @@
+.rc_content { position: relative; }
+
+#ov_login_form {
+    padding: 12px 32px 8px 0;    
+}
+
+.ov_login_row {
+    position: relative;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
+
+.ov_login_row > label > input {
+    margin-left: 6px;
+}
+
+.ov_login_row > input {
+    position: absolute;
+    right: 0
+}
+
+#ov_login_btn_container {
+    float: right;
+}
+
+#ov_err_msg {
+    display: none;
+    clear: both;
+    margin: 1em 7px 0 7px;
+}
+
+#login_footer_block {
+    margin-top: 36px;
+}
+
+#footer_logo {
+    margin-right: 7px;
+}

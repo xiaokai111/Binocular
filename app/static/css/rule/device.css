@@ -1,0 +1,178 @@
+#device_config_pane {
+    position: relative;
+}
+/*set-up general device div position */
+#device_float {
+    min-width: 385px;
+    width: 40%;
+    overflow: hidden;
+    padding-right: 8px;
+}
+#device_general {
+    margin: 32px 0px 5px 10px;
+}
+
+/*draw border around device details divs*/
+.device_details {
+    border: 1px solid black;
+    padding: 1px 1px 0px 1px;
+    margin: 1px;
+}
+
+/*remove spaces between cells and make table the full width of the div*/
+table.device {
+    border-collapse: collapse;
+    margin: 1px 1px 0px 1px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* set column widths */
+table col.device_key {
+    width: 20%;
+}
+
+table col.device_value {
+    width: 65%;
+    } 
+
+/* align text to top to line-up cells that wrap with cells that don't wrap */
+#device_config_pane td {
+    vertical-align: top;
+    padding: 2px;
+    overflow: hidden;
+}
+
+#device_config_pane p.right {    
+    text-align: right;
+}
+
+/* -------------- start of channel info table ------------- */
+/*set position */
+
+#channel_info {
+    float: right;
+    width: 58%;
+    margin: 32px 10px 5px 0px;
+    border-bottom: solid 1px black;
+}
+
+/* set border and background for channel div*/
+/* add min height to make the thumbnail fit */
+div.channel_block {
+    overflow: hidden;
+    border: 1px solid black;
+    border-bottom-style: none;
+    padding-top: 3px;
+    margin: 0px;
+    min-height: 132px;
+}
+
+.channel_block_form {
+    overflow: hidden;
+    padding-left: 2px;
+    padding-right: 4px;
+}
+
+.channel_summary {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* align channel name link to far left */
+th.channel_name {
+    text-align: left;
+}
+
+/* set column widths */
+col.channel_key {
+    width: 25%;
+}
+
+col.channel_value {
+    width: 55%;
+}
+
+#device_config_pane .inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.device_views_supported {
+    vertical-align: middle;
+}
+
+/* position thumbnail, max height is 120px */
+
+#device_config_pane .thumbnail {
+    float: right;
+    margin-left: 0px;
+    margin-right: 10px;
+    padding-top: 5px;
+    width:  160px;
+    height: 120px; 
+}
+
+/* -------------- start of channel edit block ------------- */
+
+div.channel_edit_block {
+    position: relative;
+    padding: 2px;
+    border: 1px solid black;
+    border-bottom: none;
+    margin: 0px;
+}
+
+/* set column widths */
+col.channel_edit_key {
+    width: 20%;
+}
+
+col.channel_edit_value {
+    width: 70%;
+}
+
+col.channel_edit_action {
+    min-width: 200px;
+}
+
+/*right align the key names and align veritcally so anything requiring two lines is visually aligned */ 
+#device_config_pane td.align {
+    vertical-align: text-bottom;
+}
+
+/*make the text input box longer */
+.device_edit_channel_name {
+    width: 98%;
+}
+
+.device_edit_channel_video {
+    width: 98%;
+}
+
+
+/* position save and cancel buttons.  Specify width to make IE happy */
+
+#device_config_pane .edit_buttons_pane {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 190px;
+}
+
+#device_config_pane .edit_buttons_pane > div {
+    float: right;
+}
+
+
+.device_troubleshoot_link {
+    position: relative;
+    right: 1%;
+    top: 2%;
+    padding-top: 5px;
+}
+
+.device_channel_people_only_text {
+    padding-right: 10px;
+}

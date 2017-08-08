@@ -1,0 +1,30 @@
+/*
+ * This document contains CSS rules that are to be applied
+ * ONLY to Internet Explorer versions less than version 8!
+ */
+
+/* IE 7 implements max-width, but not quite correctly.         */
+/* We do not want to set left and right margins to auto if     */
+/* max-width is set and the page contains positioned  elements */
+.restricted_width {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.min_width {
+    max-width: none !important;
+}
+
+.min_width #header_block,
+.min_width #footer_block {
+    max-width: none !important;
+}
+
+/*set height and width since there is no text to drive height and width */
+.schedule_container td {
+    height: 5px !important;
+}
+
+col#is_active_col   { width: 17px }
+
+col#action_col      { width: 40px }

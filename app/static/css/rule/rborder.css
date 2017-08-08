@@ -1,0 +1,89 @@
+/*
+ * Rounded, translucent border styles 
+ */
+
+.rborder,
+.rborder_corner  {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}
+
+.rborder {
+    background-image: url('/img/rule/border.png');
+}
+
+.rborder_corner {
+    width: 16px;
+	height: 16px;
+	background-image: url('/img/rule/border_corners.png');
+}
+
+.rborder_topleft {
+    background-position: 0 0;
+    float: left;
+}
+
+.rborder_topright  {
+    background-position: 100% 0;
+    float: right;
+}
+
+.rborder_bottomleft {
+    background-position: 0 100%;
+    float: left;
+}
+
+.rborder_bottomright  {
+    background-position: 100% 100%;
+    float: right;
+}
+
+.rborder_horizontal {
+	width: auto;
+    height: 16px;
+	margin: 0 16px 0 16px;  
+    background-repeat: repeat-x;
+}
+
+.rborder_vertical {
+    width: 16px;
+    background-repeat: repeat-y;
+    min-height: 100%;
+}
+
+.rborder_left {
+    float: left;
+}
+
+.rborder_right {
+    float: right;
+}
+
+.border_middle {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    clear: both;
+    width: 100%;
+    height: 100%;
+}
+
+.border_bottom {
+    position: relative;    
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    clear: both;
+}
+
+
+/*
+ *********************************************************
+ */
+
+.show_boxes .rborder,
+.show_boxes .rborder_corner {
+    border: solid 1px yellow;    
+}
+

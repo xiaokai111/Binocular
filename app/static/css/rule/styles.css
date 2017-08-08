@@ -1,0 +1,595 @@
+/*
+ * Initially set zero margin and zero padding on everything.
+ * This allows to create consistent spacing across browsers.
+ */
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p,
+blockquote, pre, form, fieldset, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+.look_and_feel {
+	background-color: white;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+.restricted_width {
+	min-width: 950px;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content {
+	padding: 0 5px 0 5px;
+	margin: 0 auto 0 auto;
+}
+
+#ov_loading_overlay {
+	position: absolute;
+	background-color: white;
+	/* firefox uses "opacity," IE uses "filter: alpha" */
+	opacity: .75;
+	filter: alpha(opacity=75);
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#ov_loading_overlay > img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header_block {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 99%;
+	/*
+     * Always set min-width to 0. Because we have set position fixed,
+     * we will never be able to scroll left or right within the header.
+     */
+	min-width: 0;
+	/*
+     * Always set max-width here to the exact same
+     * settings as max-width in .restricted_width.
+     */
+	max-width: 1024px;
+	/*
+	 * A background-color is necessary here to prevent the
+	 * "activity_content" from bleeding through when scrolling.
+	 */
+	background-color: white;
+}
+
+.restricted_width #header_block {
+	left: auto;
+	max-width: inherit;
+}
+
+#spacer_block {
+	/*
+	 * Push activity_content down to
+	 * prevent it overlapping with the header
+	 */
+	height: 125px;
+}
+
+#activity_content {
+	padding-top: 5px;
+}
+
+#footer_block {
+	left: 0;
+	width: 99%;
+	min-width: 0;
+	/*
+     * Always set max-width here to the exact same
+     * settings as max-width in .restricted_width.
+     */
+	max-width: 1024px;
+	margin: 2em 0 auto 0;
+}
+
+.restricted_width #footer_block {
+	left: auto;
+	max-width: inherit;
+}
+
+.footer {
+	clear: both;
+	padding-top: 5px;
+}
+
+
+/*** Text ***/
+
+.bold
+{
+	font-weight: bold;
+}
+
+.italics
+{
+	font-style: italic;
+}
+
+.pgTitle
+{
+	/*  Page titles */
+}
+
+.txt, .txtSm, .txtLg, .txtRight, .txtLeft, .lnk, .copyright
+{
+	color: black;
+}
+
+.txtSm
+{
+	font-size: 0.8em;
+}
+
+.txtLg
+{
+	font-size: 1.5em;
+}
+
+.txtRight
+{
+	text-align: right;
+}
+
+.txtLeft
+{
+	text-align: left;
+}
+
+.txtCenter
+{
+	text-align: center;
+}
+
+.lnk
+{
+}
+
+.lnk:hover
+{
+}
+
+.link_substitute {
+	font-weight: bold;
+}
+
+.copyright
+{
+	color: #999999;
+	display: block;
+	width: 100%;
+	clear: both;
+	font-size: x-small;
+	text-align: center;
+}
+
+input[type="text"].numeric,
+input[type="text"].numeric_float
+{
+	text-align: right;
+}
+
+
+.text_counter_message {
+	font-size: 85%;
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+/****validator*********/
+
+.invalid {
+	color: red;
+	border-color: red;
+}
+
+label.invalid {
+	padding-top: 2px;
+	display: block;
+}
+
+
+/*** Buttons ***/
+/*20170726 19:55注销，影响了布局*/
+
+/*.btn*/
+/*{*/
+	/*display: block;*/
+	/*background: transparent url("/img/rule/btn/btn_ends.gif") repeat-x;*/
+	/*border: none;*/
+	/*width: 124px;*/
+	/*height: 20px;*/
+	/*padding-top: 0px;*/
+	/*padding-left: 2px;*/
+	/*padding-right: 2px;*/
+/*}*/
+
+.btn input[type=button]
+{
+	border: none;
+	background: transparent url("/img/rule/btn/btn_fill.gif") repeat-x top left;
+	width: 100%;
+	height: 20px;
+	vertical-align: middle;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+
+.btn input[disabled]
+{
+	cursor: default;
+}
+
+.btnSm
+{
+	width: 76px;
+}
+
+.btnLg
+{
+	width: 216px;
+}
+
+.btnTall
+{
+	background: transparent url("/img/rule/btn/tall_btn_ends.gif") repeat-x;
+	height: 30px;
+}
+
+.btnTall input[type=button]
+{
+	background: transparent url("/img/rule/btn/tall_btn_fill.gif") repeat-x top left;
+	height: 30px;
+}
+
+/* Drop down buttons to show a menu or other selectable control */
+select.btn_dropdown                  { color: inherit; }
+
+select.btn_dropdown option           { color: black; }
+
+select.btn_dropdown option[disabled] { color: gray; }
+
+select.btn_dropdown option.nonchoice { color: #222222; }
+
+
+/*** Icons, background img and size may be set via JavaScript ***/
+.statIco
+{
+}
+
+/*** Snapshots ***/
+
+.playpause_container {
+	float: left;
+}
+
+.showhide_container {
+	text-align: center;
+}
+
+.bad_view_status_snapshot, .bad_signal_status_snapshot, .searching_status_snapshot {
+	border: 5px solid red !important;
+}
+
+.bad_signal_status_snapshot {
+	/* optionally override bad signal style here */
+}
+
+.searching_status_snapshot {
+	/* optionally override searching style here */
+}
+
+.bad_view_state_img, .bad_signal_state_img, .searching_state_img {
+	display: block;
+	height: 28px;
+	width: 28px;
+	background-image: url("/img/rule/warning.png");
+	background-repeat: no-repeat;
+}
+
+.bad_signal_state_img {
+	/* optionally override bad signal warning icon here */
+}
+
+.searching_state_img {
+	/* optionally override searching warning icon here */
+}
+
+/*** Warning overlay ***/
+
+.warning_overlay {
+	display: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+}
+
+.warning_frame {
+	width: 30px;
+	position: relative;
+	bottom: 0;
+	float: left;
+	margin-bottom: 0;
+}
+
+.warning_content {
+	position: relative;
+	text-align: center;
+}
+
+.warning_tooltip_header {
+	font-size: larger;
+	font-weight: bold;
+	text-align: center;
+}
+
+.warning_tooltip_timestamp {
+	font-size: small;
+	font-style: italic;
+	text-align: center;
+}
+
+
+/* Expanding snapshots */
+
+#expand_snapshot {
+	background-image: url(/img/rule/expandpalette.png);
+	cursor: pointer;
+	border-top: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 32px;
+	height: 28px;
+}
+
+#expand_snapshot.collapse_snapshot {
+	background-position: -100% 0
+}
+
+#markup_pane #expand_snapshot.disabled {
+	background-position: 0 -100%;
+	cursor: default;
+}
+
+
+/*** Tables ***/
+
+.tbl
+{
+	border: solid 1px gray;
+	border-collapse: collapse;
+	background: #D0D0D0;
+	text-align:left;
+	vertical-align: middle;
+	margin-bottom: 1px;
+}
+
+.tbl td
+{
+
+	border-bottom: solid 1px black;
+	padding-left: 5px;
+}
+
+.tbl th
+{
+	padding-left: 5px;
+	background-color: gray;
+	color: white;
+}
+
+.tbl .tblInput
+{
+	width: 1px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.tbl .tblIco
+{
+	width: 1px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.accent_bkgnd {
+	background-color: #EDF3FE;
+}
+
+.selected_row
+{
+	background-color: blue;
+	color: 	white;
+}
+
+.selected_row a:link
+{
+	color: white;
+}
+
+.selected_row a:visited
+{
+	color: white;
+}
+
+/*** Video Pane ***/
+.videoPane
+{
+}
+
+/*** Miscellaneous ***/
+.divider
+{
+	clear: both;
+	border-top: dotted 1px;
+	margin: 2px 1px 5px 1px;
+}
+
+.logo
+{
+	display: inline;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.hidden
+{
+	display: none;
+}
+
+.disabled
+{
+	color: gray;
+}
+
+.error
+{
+	color: Red;
+}
+
+.error p
+{
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+/*** Round Corner Border ***/
+.rc_line1,
+.rc_line2,
+.rc_line3,
+.rc_line4
+{
+	font-size: 1px;
+	overflow: hidden;
+	display: block;
+	border-right: 0px solid #0060cb;
+	border-left: 0px solid #0060cb;
+}
+
+.rc_line1
+{
+	height: 1px;
+	background: #0060cb;
+	margin:0 5px;
+}
+
+.rc_line2
+{
+	height: 1px;
+	border-right-width: 2px;
+	border-left-width: 2px;
+	margin:0 3px;
+}
+
+.rc_line3
+{
+	height: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	margin:0 2px;
+}
+
+.rc_line4
+{
+	height: 2px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	margin:0 1px;
+}
+
+.rc_content
+{
+	border-right: 1px solid #0060cb;
+	border-left: 1px solid #0060cb;
+}
+
+/*** Login Panel at Index Page ***/
+.login_panel
+{
+	height: 350px;
+	margin: 10% auto;
+	width: 370px;
+}
+
+#device_status_pane
+{
+	float: right;
+}
+
+#device_status {
+	font-weight: bold;
+}
+
+
+.troubleshoot_link {
+	font-size: 0.85em;
+	float: right;
+	padding-right: 12px;
+}
+
+
+/*
+ * Error dialog box
+ */
+#error_string { height: auto; }
+#error_text p { height: auto !important; }
+#error_text a { text-decoration: underline; }
+
+#error_text h3 {
+	max-width: 115px;
+	border: none;
+	background: none;
+}
+
+#tech_error {
+	border: none;
+	height: auto;
+}
+
+/*
+ * Controls whether help links are displayed. Add the attribute display: none; to hide the help icons
+ */
+.helpLink {
+
+}
+
+/*
+ * Controls whether the Help link in the top-right corner of every page is displayed. Add the attribute display: none; to hide the help link.
+ */
+.dynamicHelp {
+
+}
+
+/*
+ * Override setting from jquery-ui
+ */
+.ui-state-active, .ui-widget-content .ui-state-active { margin-bottom: 2px; }
+
+.ui-accordion .ui-accordion-content {padding: 1px; overflow: hidden; }
+
+.txtSm ov_replace_text{
+	display:block;
+	width:400px;
+	text-align:justify;
+	text-justify :distribute-all-lines;
+}
+
